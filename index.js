@@ -102,6 +102,13 @@ let topMovies2023 = [
 // This serves the statics files in the "public" folder
 app.use(express.static("public"));
 
+/* Creating GET route at endpoint "/" returning a text
+app.get("/", (req, res) => {
+  res.send("Welcome to the Movie App");
+});
+Note: I used the express.static("public") in order to access the index.html file. 
+*/
+
 // Creating GET route at endpoint "/movies" returning JSON object
 app.get("/movies", (req, res) => {
   res.json(topMovies2023);
