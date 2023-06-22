@@ -139,7 +139,7 @@ app.post("/users", (req, res) => {
     users.push(newUser);
     res.status(201).json(newUser);
   } else {
-    res.status(400).send("User namve is requiered.");
+    res.status(400).send("User name is requiered.");
   }
 });
 

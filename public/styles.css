@@ -1,0 +1,17 @@
+#api-table {
+    margin: 25px auto;
+    width: 90%;
+}
+
+#api-table th {
+    border: 2px solid aliceblue;
+    padding: 5px;
+    text-align: left;
+}
+
+#api-table td {
+    padding: 2px;
+    text-align: left;
+    border: 2px solid aliceblue;
+    font-size: 0.9rem;
+}
