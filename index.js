@@ -52,7 +52,7 @@ let movies = [
   {
     title: "Spider-Man: Across the Spider-Verse",
     genre: "Animation",
-    director: " Joaquim Dos Santos",
+    director: "Joaquim Dos Santos",
     extract:
       "Miles Morales catapults across the Multiverse, where he encounters a team of Spider-People charged with protecting its very existence. When the heroes clash on how to handle a new threat, Miles must redefine what it means to be a hero.",
     year: "2023",
@@ -68,16 +68,16 @@ let movies = [
     rating: "none",
   },
   {
-    title: " Dune: Part Two",
+    title: "Dune: Part Two",
     genre: "Action",
-    director: " Denis Villeneuve",
+    director: "Denis Villeneuve",
     extract:
       "A boy becomes the Messiah of nomads on a desert planet that has giant worms that protect a commodity called Spice. Spice changes people into travelers, mystics and madmen. What price will he pay to become the new ruler of their universe?",
     year: "2023",
     rating: "none",
   },
   {
-    title: " Indiana Jones and the Dial of Destiny",
+    title: "Indiana Jones and the Dial of Destiny",
     genre: "Action",
     director: "James Mangold",
     extract:
@@ -97,7 +97,7 @@ let movies = [
   {
     title: "A Haunting in Venice",
     genre: "Crime",
-    director: "Kenneth Branagh ",
+    director: "Kenneth Branagh",
     extract:
       "In post-World War II Venice, Poirot, now retired and living in his own exile, reluctantly attends a seance. But when one of the guests is murdered, it is up to the former detective to once again uncover the killer.",
     year: "2023",
