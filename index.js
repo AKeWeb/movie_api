@@ -14,53 +14,55 @@ app.use(bodyParser.json());
 /* ------------------------------------ USER DB ----------------------------- */
 
 //JSON Data of the users
+/*
 let users = [
   {
     UserName: "Joe1987",
     Password: "123$987",
     Email: "joe.doe@gmail.com ",
-    Birth: "1987-7-14",
-    FavoriteMovies: [],
+    Birthday: new Date("1987-07-14"),
+    FavoriteMovies: [ObjectId("649aa1348b4dec2991320968"), ObjectId("649aa1958b4dec2991320969"), ObjectId("649aa2198b4dec299132096a")],
   },
   
   {
     UserName: "Mary2",
     Password: "yIUL45%&",
     Email: "mary.king@gmx.ch",
-    Birth: "2001-11-23",
-    FavoriteMovies: [],
+    Birthday: new Date("2001-11-23"),
+    FavoriteMovies: [ObjectId("649aa5e78b4dec2991320972"), ObjectId("649aa1348b4dec2991320968")],
   },
 
   {
     UserName: "Elsa01",
     Password: "plO123!",
     Email: "elsa.monroe@hotmail.com",
-    Birth: "1967-3-12",
-    FavoriteMovies: [],
+    Birthday: new Date("1967-3-12"),
+    FavoriteMovies: [ObjectId("649aa4398b4dec299132096c"), ObjectId("649aa1348b4dec2991320968")],
   },
 
   {
     UserName: "JohnB",
     Password: "9808*#",
     Email: "john.bauer@gmx.ch",
-    Birth: "1998-10-19",
-    FavoriteMovies: [],
+    Birthday: new Date("1998-10-19"),
+    FavoriteMovies: [ObjectId("649aa2198b4dec299132096a"), ObjectId("649aa5278b4dec299132096d"), ObjectId("649aa56d8b4dec299132096f"), ObjectId("649aa5968b4dec2991320970")],
   },
 
   {
     UserName: "JulianT",
     Password: "tq54$%#fu",
     Email: "julian.tielman@gmail.com",
-    Birth: "1975-2-27",
-    FavoriteMovies: [],
+    Birthday: new Date("1975-2-27"),
+    FavoriteMovies: [ObjectId("649aa5c08b4dec2991320971"), ObjectId("649aa5e78b4dec2991320972")],
   },
 ];
-
+*/
 /* ------------------------------------ MOVIE DB ----------------------------- */
 
 // JSON Data of the Top Movies 2023:
+/*
 let movies = [
-  {
+   {
     Title: "John Wick: Chapter 4",
     Description:
       "John Wick uncovers a path to defeating The High Table. But before he can earn his freedom, Wick must face off against a new enemy with powerful alliances across the globe and forces that turn old friends into foes.",
@@ -78,9 +80,9 @@ let movies = [
     Featured: false,
     Year: "2023",
     Rating: "7.9",
-    Actors: ["Keanu Reeves", "Scott Adkins"],
+    Actors: ["Keanu Reeves", "Scott Adkins"]
   },
-
+  
   {
     Title: " Killers of the Flower Moon",
     Description:
@@ -291,7 +293,7 @@ let movies = [
     Actors: ["Robert De Niro", "Al Paciono"],
   },
 ];
-
+*/
 /* ------------------------------------ STATIC FILES ----------------------------- */
 
 // This serves the statics files in the "public" folder
