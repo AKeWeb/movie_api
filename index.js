@@ -16,14 +16,43 @@ app.use(bodyParser.json());
 //JSON Data of the users
 let users = [
   {
-    id: 1,
-    name: "Kim",
-    favoriteMovies: [],
+    UserName: "Joe1987",
+    Password: "123$987",
+    Email: "joe.doe@gmail.com ",
+    Birth: "1987-7-14",
+    FavoriteMovies: [],
   },
+  
   {
-    id: 2,
-    name: "John",
-    favoriteMovies: ["Oppenheimer"],
+    UserName: "Mary2",
+    Password: "yIUL45%&",
+    Email: "mary.king@gmx.ch",
+    Birth: "2001-11-23",
+    FavoriteMovies: [],
+  },
+
+  {
+    UserName: "Elsa01",
+    Password: "plO123!",
+    Email: "elsa.monroe@hotmail.com",
+    Birth: "1967-3-12",
+    FavoriteMovies: [],
+  },
+
+  {
+    UserName: "JohnB",
+    Password: "9808*#",
+    Email: "john.bauer@gmx.ch",
+    Birth: "1998-10-19",
+    FavoriteMovies: [],
+  },
+
+  {
+    UserName: "JulianT",
+    Password: "tq54$%#fu",
+    Email: "julian.tielman@gmail.com",
+    Birth: "1975-2-27",
+    FavoriteMovies: [],
   },
 ];
 
@@ -32,94 +61,234 @@ let users = [
 // JSON Data of the Top Movies 2023:
 let movies = [
   {
-    title: "John Wick: Chapter 4",
-    genre: "Action",
-    director: "Chad Stahelski",
-    extract:
+    Title: "John Wick: Chapter 4",
+    Description:
       "John Wick uncovers a path to defeating The High Table. But before he can earn his freedom, Wick must face off against a new enemy with powerful alliances across the globe and forces that turn old friends into foes.",
-    year: "2023",
-    rating: "7.9",
+    Genre: {
+      Name: "Action",
+      Description: "Action films are built around a core set of characteristics: spectacular physical action; a narrative emphasis on fights, chases, and explosions; and a combination of state-of-the-art special effects and stunt-work."
+    },
+    Director: {
+      Name: "Chad Stahelski",
+      Bio: "Chad Stahelski is an American stuntman and film director. He directed the 2014 film John Wick and its three sequels. He has worked as a stuntman, stunt coordinator and second unit director on several films.",
+      Birth: "1968-09-20",
+      Death: "",
+    },
+    ImagePath: "/public/img/John-Wick-Chapter-4.png",
+    Featured: false,
+    Year: "2023",
+    Rating: "7.9",
+    Actors: ["Keanu Reeves", "Scott Adkins"],
   },
+
   {
-    title: " Killers of the Flower Moon",
-    genre: "Crime",
-    director: "Martin Scorsese",
-    extract:
+    Title: " Killers of the Flower Moon",
+    Description:
       "Members of the Osage tribe in the United States are murdered under mysterious circumstances in the 1920s, sparking a major F.B.I. investigation involving J. Edgar Hoover.",
-    year: "2023",
-    rating: "9.3",
+    Genre: {
+      Name: "Crime",
+      Description: "As the name implies, the crime genre is largely classified by a story that is centered around the solving of a crime. The story needs a protagonist, usually some type of detective, whether a professional or an amateur or even a private investigator, who is determined to solve the crime.",
+    },
+    Director: {
+      Name: "Martin Scorsese",
+      Bio: "Martin Charles Scorsese is an American and Italian film director, producer, screenwriter and actor. Scorsese emerged as one of the major figures of the New Hollywood era.",
+      Birth: "1942-11-17",
+      Death: "",
+    },
+    ImagePath:"/public/img/Killers-of-the-Flower-Moon.png",
+    Featured: false,
+    Year: "2023",
+    Rating: "9.3",
+    Actors: ["Leonardo DiCaprio", "Lily Gladstone"],
   },
+
   {
-    title: "Spider-Man: Across the Spider-Verse",
-    genre: "Animation",
-    director: "Joaquim Dos Santos",
-    extract:
+    Title: "Spider-Man: Across the Spider-Verse",
+    Description:
       "Miles Morales catapults across the Multiverse, where he encounters a team of Spider-People charged with protecting its very existence. When the heroes clash on how to handle a new threat, Miles must redefine what it means to be a hero.",
-    year: "2023",
-    rating: "9.0",
+    genre: {
+      Name: "Animation",
+      Description: "An animated movie or cartoon, is made up of a series of slightly different drawings of people, animals, and objects that make them appear to move.",
+    },
+    Director: {
+      Name: "Joaquim Dos Santos",
+      Bio: "Joaquim Aranha dos Santos is a Portuguese-American animator, storyboard artist, director, producer, and writer. He is best known for his directing work on the television series Justice League Unlimited, Avatar: The Last Airbender, G.I. Joe: Resolute, The Legend of Korra, and Voltron: Legendary Defender.",
+      Birth: "1977-6-22",
+      Death: "",
+    },
+    ImagePath: "/public/img/Spider-Man-Across-the-Spider-Verse.png",
+    Featured: false,
+    Year: "2023",
+    Rating: "9.0",
+    Actors: ["Oscar Isaac", "Shameik Moore"],
   },
+
   {
-    title: "Oppenheimer",
-    genre: "Biography",
-    director: "Christopher Nolan",
-    extract:
-      "The story of American scientist J. Robert Oppenheimer and his role in the development of the atomic bomb.",
-    year: "2023",
-    rating: "none",
+    Title: "Oppenheimer",
+    Description:
+    "The story of American scientist J. Robert Oppenheimer and his role in the development of the atomic bomb.",
+    Genre: {
+      Name: "Biography",
+      Description: "A biopic is a movie that dramatizes the life of a real, non-fictional individual. Short for “biographical motion picture,” a biopic can cover a person's entire life or one specific moment in their history.",
+    },
+    Director: {
+      Name: "Christopher Nolan",
+      Bio: "Christopher Edward Nolan CBE is a British-American filmmaker. Known for his Hollywood blockbusters with complex storytelling, Nolan is considered a leading filmmaker of the 21st century. His films have grossed $5 billion worldwide.",
+      Birth: "1970-7-30",
+      Death: "",
+    },
+    ImagePath: "/public/img/Oppenheimer.png",
+    Featured: true,
+    Year: "2023",
+    Rating: "6.7",
+    Actors: ["Robert Downey Jr.", "Florence Pugh"],
   },
+
   {
-    title: "Dune: Part Two",
-    genre: "Action",
-    director: "Denis Villeneuve",
-    extract:
+    Title: "Dune: Part Two",
+    Description:
       "A boy becomes the Messiah of nomads on a desert planet that has giant worms that protect a commodity called Spice. Spice changes people into travelers, mystics and madmen. What price will he pay to become the new ruler of their universe?",
-    year: "2023",
-    rating: "none",
+    Genre: {
+      Name: "Action",
+      Description: "Action films are built around a core set of characteristics: spectacular physical action; a narrative emphasis on fights, chases, and explosions; and a combination of state-of-the-art special effects and stunt-work.",
+    },
+    Director: {
+      Name: "Denis Villeneuve",
+      Bio: "Denis Villeneuve OC CQ RCA is a French-Canadian filmmaker. He is a four-time recipient of the Canadian Screen Award for Best Direction, winning for Maelström in 2001, Polytechnique in 2009, Incendies in 2010 and Enemy in 2013.",
+      Birth: "1967-10-03",
+      Death: "",
+    },
+    ImagePath: "/public/img/Dune-Part-Two.png",
+    Featured: false,
+    Year: "2023",
+    Rating: "8.2",
+    Actors: ["Austin Butler", "Zendaya"],
   },
+
   {
-    title: "Indiana Jones and the Dial of Destiny",
-    genre: "Action",
-    director: "James Mangold",
-    extract:
+    Title: "Indiana Jones and the Dial of Destiny",
+    Description:
       "Archaeologist Indiana Jones races against time to retrieve a legendary artifact that can change the course of history.",
-    year: "2023",
-    rating: "none",
+    Genre: {
+      Name: "Action",
+      Description: "Action films are built around a core set of characteristics: spectacular physical action; a narrative emphasis on fights, chases, and explosions; and a combination of state-of-the-art special effects and stunt-work.",
+    },
+    Director: {
+      Name: "James Mangold",
+      Bio: "James Allen Mangold is an American filmmaker. He made his debut as a film director with Heavy, and is best known for the films Cop Land, Girl, Interrupted, Identity, Walk the Line.",
+      Birth: "1963-12-16",
+      Death: "",
+    },
+    ImagePath: "/public/img/Indiana-Jones-and-the-Dial-of-Destiny.png",
+    Featured: true,
+    Year: "2023",
+    Rating: "9.8",
+    Actors: ["Harrison Ford", "Mads Mikkelsen"],
   },
+
   {
-    title: "Mission: Impossible - Dead Reckoning Part One",
-    genre: "Action",
-    director: "Christopher McQuarrie",
-    extract:
-      "Ethan Hunt and his IMF team must track down a dangerous weapon before it falls into the wrong hands.",
-    year: "2023",
-    rating: "none",
+    Title: "Mission: Impossible - Dead Reckoning Part One",
+    Description:
+    "Ethan Hunt and his IMF team must track down a dangerous weapon before it falls into the wrong hands.",
+    Genre: {
+      Name: "Action",
+      Description: "Action films are built around a core set of characteristics: spectacular physical action; a narrative emphasis on fights, chases, and explosions; and a combination of state-of-the-art special effects and stunt-work.",
+    },
+    Director: {
+      Name: "Christopher McQuarrie",
+      Bio: "Christopher McQuarrie is an American filmmaker. He received the BAFTA Award, Independent Spirit Award, and Academy Award for Best Original Screenplay for the neo-noir mystery film The Usual Suspects. He made his directorial debut with the crime thriller film The Way of the Gun.",
+      Birth: "1968-10-25",
+      Death: "",
+    },
+    ImagePath: "/public/img/Mission-Impossible-Dead-Reckoning-Part-One.png",
+    Featured: true,   
+    Year: "2023",
+    Rating: "9.9",
+    Actors: ["Tom Cruise", "Haytley Atwell"],
   },
+
   {
-    title: "A Haunting in Venice",
-    genre: "Crime",
-    director: "Kenneth Branagh",
-    extract:
+    Title: "A Haunting in Venice",
+    Description:
       "In post-World War II Venice, Poirot, now retired and living in his own exile, reluctantly attends a seance. But when one of the guests is murdered, it is up to the former detective to once again uncover the killer.",
-    year: "2023",
-    rating: "none",
+    Genre: {
+      Name: "Crime",
+      Description: "As the name implies, the crime genre is largely classified by a story that is centered around the solving of a crime. The story needs a protagonist, usually some type of detective, whether a professional or an amateur or even a private investigator, who is determined to solve the crime.",
+    },
+    Director: {
+      Name: "Kenneth Branagh",
+      Bio: "Sir Kenneth Charles Branagh is a British actor and filmmaker. He has won an Academy Award, four BAFTAs, two Emmy Awards, a Golden Globe Award, and an Olivier Award. He was appointed a Knight Bachelor in the 2012 Birthday Honours, and was given Freedom of the City in his native Belfast in 2018.",
+      Birth: "1960-12-10",
+      Death: "",
+    },
+    ImagePath: "/public/img/A-Haunting-in-Venice.png",
+    Featured: false,
+    Year: "2023",
+    Rating: "8.3",
+    Actors: ["Kenneth Branagh", "Kelly Reilly"],
   },
+
   {
-    title: "Dungeons & Dragons: Honour Among Thieves",
-    genre: "Action",
-    director: "John Francis Daley",
-    extract:
+    Title: "Dungeons & Dragons: Honour Among Thieves",
+    Description:
       "A charming thief and a band of unlikely adventurers embark on an epic quest to retrieve a lost relic, but things go dangerously awry when they run afoul of the wrong people.",
-    year: "2023",
-    rating: "7.3",
+    Genre: {
+      Name: "Action",
+      Description: "Action films are built around a core set of characteristics: spectacular physical action; a narrative emphasis on fights, chases, and explosions; and a combination of state-of-the-art special effects and stunt-work.",
+    },
+    Director: {
+      Name: "John Francis Daley",
+      Bio: "John Francis Daley is an American actor, filmmaker, and musician. He is best known for playing high school freshman Sam Weir on the NBC comedy-drama Freaks and Geeks and FBI criminal profiler Dr. Lance Sweets on the crime drama series Bones, for which he was nominated for a 2014 PRISM Award.",
+      Birth: "1985-7-20",
+      Death: "",
+    },
+    ImagePath: "/public/img/Dungeons-Dragons-Honour-Among-Thieves.png",
+    Featured: false,
+    Year: "2023",
+    Rating: "7.3",
+    Actors: ["Sophie Lillis", "Chris Pine"],
   },
+
   {
-    title: "Asteroid City",
-    genre: "Comedy",
-    director: "Wes Anderson",
-    extract:
+    Title: "Asteroid City",
+    Description:
       "Following a writer on his world famous fictional play about a grieving father, who travels with his tech-obsessed family to small rural Asteroid City, to compete in a stargazing event. Only to have his world view disrupted forever.",
-    year: "2023",
-    rating: "7.0",
+    Genre: {
+      Name: "Comedy",
+      Description: "Comedy films are make them laugh films designed to elicit laughter from the audience. Comedies are light-hearted dramas, crafted to amuse, entertain, and provoke enjoyment. The comedy genre humorously exaggerates the situation, the language, action, and characters.",
+    },
+    Director: {
+      Name: "Wes Anderson",
+      Bio: "Wesley Wales Anderson is an American filmmaker. His films are known for their eccentricity, unique visual and narrative styles, and frequent use of ensemble casts. They often contain themes of grief, loss of innocence, and dysfunctional families.",
+      Birth: "1969-05-01",
+      Death: "",
+    },
+    ImagePath: "/public/img/Asteroid-City.png",
+    Featured: false,
+    Year: "2023",
+    Rating: "7.0",
+    Actors: ["Scarlett Johansson", "Tom Hanks"],
+  },
+
+  {
+  Title: "The Irishman",
+    Description:
+      "An illustration of Frank Sheeran's life, from W.W.II veteran to hit-man for the Bufalino crime family and his alleged assassination of his close friend Jimmy Hoffa",
+    Genre: {
+      Name: "Crime",
+      Description: "As the name implies, the crime genre is largely classified by a story that is centered around the solving of a crime. The story needs a protagonist, usually some type of detective, whether a professional or an amateur or even a private investigator, who is determined to solve the crime.",
+    },
+    Director: {
+      Name: "Martin Scorsese",
+      Bio: "Martin Charles Scorsese is an American and Italian film director, producer, screenwriter and actor. Scorsese emerged as one of the major figures of the New Hollywood era.",
+      Birth: "1942-11-17",
+      Death: "",
+    },
+    ImagePath: "/public/img/The-Irishman.png",
+    Featured: false,
+    Year: "2019",
+    Rating: "9.0",
+    Actors: ["Robert De Niro", "Al Paciono"],
   },
 ];
 
@@ -230,9 +399,9 @@ app.get("/movies/:title", (req, res) => {
 });
 
 //READ: Get route to get a specific genre
-app.get("/movies/genre/:genreName", (req, res) => {
+app.get("/movies/genre.name/:genreName", (req, res) => {
   const { genreName } = req.params;
-  const genre = movies.find((movie) => movie.genre === genreName).genre;
+  const genre = movies.find((movie) => movie.genre.name === genreName).genre;
 
   if (genre) {
     res.status(200).json(genre);
@@ -242,10 +411,10 @@ app.get("/movies/genre/:genreName", (req, res) => {
 });
 
 //READ: Get route to get a specific director
-app.get("/movies/directors/:directorName", (req, res) => {
+app.get("/movies/directors.name/:directorName", (req, res) => {
   const { directorName } = req.params;
   const director = movies.find(
-    (movie) => movie.director === directorName
+    (movie) => movie.director.name === directorName
   ).director;
 
   if (director) {
