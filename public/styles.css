@@ -7,11 +7,13 @@
     border: 2px solid aliceblue;
     padding: 5px;
     text-align: left;
+    vertical-align: top;
 }
 
 #api-table td {
     padding: 2px;
     text-align: left;
+    vertical-align: top;
     border: 2px solid aliceblue;
     font-size: 0.9rem;
 }

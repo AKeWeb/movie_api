@@ -198,7 +198,7 @@ app.get("/movies/:Title", (req, res)=> {
 
 //READ: Get route to get a specific genre
 app.get("/movies/genre/:genreName", (req, res)=>{
-  Movies.findOne({"Genre.Name": req.params.genreName})
+  Movies.find({"Genre.Name": req.params.genreName})
   .then((movie)=>{
     if(movie) {
       res.status(200).json(movie);

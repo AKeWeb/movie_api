@@ -45,33 +45,83 @@
           <td>
             A JSON object holding data about the user:
             <br />
-            {name: "Kim", favoriteMovies: []}
+            {
+              "UserName": "Mary2",
+              "Password": "yIUL45%&",
+              "Email": "mary.king@gmx.ch",
+              "Birthday": "02/26/1982",
+              "FavoriteMovies": []
+            }
           </td>
           <td>
             A JSON object holding dato about the user, incluiding an unic ID:
             <br />
-            {id: 5, name: "Kim", favoriteMovies: []}
+            {
+              "UserName": "Mary2",
+              "Password": "yIUL45%&",
+              "Email": "mary.king@gmx.ch",
+              "Birthday": "1982-02-25T23:00:00.000Z",
+              "FavoriteMovies": [],
+              "_id": "649d30db0e361e5752e50232",
+              "__v": 0
+          }
           </td>
         </tr>
 
         <tr>
+          <td>Users</td>
+          <td>Get a list of all users</td>
+          <td>/users</td>
+          <td>Read</td>
+          <td>GET</td>
+          <td>None</td>
+          <td>JSON with all users</td>
+        </tr>
+
+        <tr>
+          <td>Users</td>
+          <td>Get a specific user by Username</td>
+          <td>/user/:UserName</td>
+          <td>Read</td>
+          <td>GET</td>
+          <td>None</td>
+          <td>JSON with the selected user</td>
+        </tr>
+
+        <tr>
           <td>User</td>
-          <td>Up-date user name</td>
-          <td>/user/:id</td>
+          <td>Up-date user data by Username</td>
+          <td>/user/:UserName</td>
           <td>Up-date</td>
           <td>PUT</td>
-          <td>A JSOn object</td>
+          <td>A JSON object with the new User information:</td>
+          <br>
+          {
+            "UserName": "MaryNew",
+            "Password": "yIUL45%&",
+            "Email": "mary.new@gmx.ch",
+            "Birthday": "02/26/1982",
+            "FavoriteMovies": []
+          }
           <td>
-            A JSON object of the user with the new name:
+            A JSON object of the user with the new updated user information:
             <br />
-            {id: 5, name: "New Name", favoriteMovies: []}
+            {
+              "_id": "649d30db0e361e5752e50232",
+              "UserName": "MaryNew",
+              "Password": "yIUL45%&",
+              "Email": "mary.new@gmx.ch",
+              "Birthday": "1982-02-25T23:00:00.000Z",
+              "FavoriteMovies": [],
+              "__v": 0
+            }
           </td>
         </tr>
 
         <tr>
           <td>User</td>
-          <td>Deleting a user</td>
-          <td>/user/:id</td>
+          <td>Deleting a user by Username</td>
+          <td>/user/:UserName</td>
           <td>Delete</td>
           <td>DELETE</td>
           <td>None</td>
@@ -81,24 +131,49 @@
         <tr>
           <td>Favorite Movies</td>
           <td>Add a favorite movie to the personal favorite list</td>
-          <td>/users/:id/:movieTitle</td>
+          <td>/users/:UserName/movies/:MovieID</td>
           <td>Create</td>
           <td>POST</td>
-          <td>A JSON object</td>
+          <td>The url /:MovieID uses the ObjectId of the movie in the movie collection one wants to add</td>
           <td>
-            Message that movie was added successfully to the favorite list
+            A JSON object of the user with all the favorite Movies, incluiding the one just added:
+            <br>
+            {
+              "_id": "649d301e0e361e5752e5022d",
+              "UserName": "Luisa",
+              "Password": "12&12&12",
+              "Email": "luisa@test.com",
+              "Birthday": "1982-09-13T22:00:00.000Z",
+              "FavoriteMovies": [
+                  "649aa2198b4dec299132096a",
+                  "649aa1348b4dec2991320968"
+              ],
+              "__v": 0
+          }
           </td>
         </tr>
 
         <tr>
           <td>Favorite Movies</td>
           <td>Delete movie from favorite list</td>
-          <td>/users/:id/:moviesTitle</td>
+          <td>/users/:UserName/movies/:MovieID</td>
           <td>Delete</td>
           <td>DELETE</td>
-          <td>None</td>
+          <td>The url /:MovieID uses the ObjectId of the movie in the movie collection one wants to delete</td>
           <td>
-            Message that movie was deleted successfully from the favorite list
+            JSON object without the movie just deleted
+            <br>
+            {
+              "_id": "649d301e0e361e5752e5022d",
+              "UserName": "Luisa",
+              "Password": "12&12&12",
+              "Email": "luisa@test.com",
+              "Birthday": "1982-09-13T22:00:00.000Z",
+              "FavoriteMovies": [
+                  "649aa2198b4dec299132096a"
+              ],
+              "__v": 0
+          }
           </td>
         </tr>
 
@@ -119,7 +194,7 @@
           <td>Read</td>
           <td>GET</td>
           <td>None</td>
-          <td>JSON with the selected movie</td>
+          <td>JSON with the selected movie title</td>
         </tr>
 
         <tr>
@@ -129,7 +204,7 @@
           <td>Read</td>
           <td>GET</td>
           <td>None</td>
-          <td>JSON with the selected genre</td>
+          <td>JSON of all movies with the selected genre</td>
         </tr>
 
         <tr>
@@ -139,7 +214,7 @@
           <td>Read</td>
           <td>GET</td>
           <td>None</td>
-          <td>JSON with the selected director name</td>
+          <td>JSON of all movies with the selected director name</td>
         </tr>
       </tbody>
     </table>
