@@ -11,3 +11,8 @@
 ::1 - - [22/Jun/2023:10:06:31 +0000] "POST /users/1 HTTP/1.1" 404 147 "-" "PostmanRuntime/7.32.3"
 ::1 - - [22/Jun/2023:10:09:18 +0000] "POST /1/Oppenheimer HTTP/1.1" 404 153 "-" "PostmanRuntime/7.32.3"
 ::1 - - [28/Jun/2023:11:12:38 +0000] "GET /users/ HTTP/1.1" 404 145 "-" "PostmanRuntime/7.32.3"
+::1 - - [29/Jun/2023:06:32:16 +0000] "PUT /users/test1234 HTTP/1.1" 404 153 "-" "PostmanRuntime/7.32.3"
+::1 - - [29/Jun/2023:06:34:22 +0000] "PUT /users/test1234 HTTP/1.1" 404 153 "-" "PostmanRuntime/7.32.3"
+::1 - - [29/Jun/2023:06:38:52 +0000] "PUT /users/test1234 HTTP/1.1" 404 153 "-" "PostmanRuntime/7.32.3"
+::1 - - [29/Jun/2023:06:41:28 +0000] "PUT /users/test1234 HTTP/1.1" 404 153 "-" "PostmanRuntime/7.32.3"
+::1 - - [29/Jun/2023:06:44:38 +0000] "PUT /users/test1234 HTTP/1.1" 404 153 "-" "PostmanRuntime/7.32.3"
