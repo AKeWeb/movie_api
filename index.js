@@ -78,7 +78,7 @@ app.get('/users', (req, res) => {
 });
 
 // Get a user by username
-app.get('/users/:UserName', (req, res) => {
+app.get('/users/:UserName', passport.authenticate("jwt", {session: false}), (req, res) => {
   Users.findOne({ UserName: req.params.UserName })
     .then((user) => {
       res.json(user);
@@ -90,7 +90,7 @@ app.get('/users/:UserName', (req, res) => {
 });
 
 //Up-date user data:
-app.put("/users/:UserName", (req, res) => {
+app.put("/users/:UserName", passport.authenticate("jwt", {session: false}), (req, res) => {
   Users.findOneAndUpdate({UserName: req.params.UserName},
   {$set: {
     UserName: req.body.UserName,
@@ -115,8 +115,8 @@ app.put("/users/:UserName", (req, res) => {
 });
 });
 
-//Delete user:
-app.delete("/users/:UserName", (req, res) =>{
+//Delete user by name:
+app.delete("/users/:UserName",  (req, res) =>{
   Users.findOneAndRemove ({UserName: req.params.UserName})
   .then ((user)=> {
     if (!user) {
@@ -135,7 +135,7 @@ app.delete("/users/:UserName", (req, res) =>{
 /* ------------------------------------ FAVORITE MOVIES ----------------------------- */
 
 //Create or add a favorite movie to a list
-app.post("/users/:UserName/movies/:MovieID", (req, res) =>{
+app.post("/users/:UserName/movies/:MovieID", passport.authenticate("jwt", {session: false}), (req, res) =>{
   Users.findOneAndUpdate({UserName: req.params.UserName},
     {$addToSet: {FavoriteMovies: req.params.MovieID}},
     {new: true}
@@ -154,7 +154,7 @@ app.post("/users/:UserName/movies/:MovieID", (req, res) =>{
 });
 
 //Delete movie from favorite list:
-app.delete("/users/:UserName/movies/:MovieID", (req, res) =>{
+app.delete("/users/:UserName/movies/:MovieID", passport.authenticate("jwt", {session: false}), (req, res) =>{
   Users.findOneAndUpdate({UserName: req.params.UserName},
     {$pull: {FavoriteMovies: req.params.MovieID}},
     {new: true}
@@ -188,7 +188,7 @@ app.get("/movies", passport.authenticate("jwt", {session: false}), (req, res) =>
 });
 
 //READ: Get route to get a specific movie titel
-app.get("/movies/:Title", (req, res)=> {
+app.get("/movies/:Title", passport.authenticate("jwt", {session: false}), (req, res)=> {
   Movies.findOne({Title: req.params.Title})
     .then ((movie)=> {
       if (movie) {
@@ -204,7 +204,7 @@ app.get("/movies/:Title", (req, res)=> {
 });
 
 //READ: Get route to get a specific genre
-app.get("/movies/genre/:genreName", (req, res)=>{
+app.get("/movies/genre/:genreName", passport.authenticate("jwt", {session: false}), (req, res)=>{
   Movies.find({"Genre.Name": req.params.genreName})
   .then((movie)=>{
     if(movie) {
@@ -220,7 +220,7 @@ app.get("/movies/genre/:genreName", (req, res)=>{
 });
 
 //READ: Get route to get a specific director
-app.get("/movies/directors/:directorName", (req, res) => {
+app.get("/movies/directors/:directorName", passport.authenticate("jwt", {session: false}), (req, res) => {
   Movies.find({"Director.Name": req.params.directorName})
   .then ((movie) => {
     if(movie) {
