@@ -12,12 +12,19 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+
 /* REQUIRE MONGOSE AND DEFINED MODELES */
 const mongoose = require('mongoose');
 const Models = require('./models.js');
 
 const Movies = Models.Movie;
 const Users = Models.User;
+
+/*Authentication*/
+let auth = require("./auth")(app);
+const passport = require("passport");
+require("./passport");
+
 
 /*CONECTING MONGODB WITH MONGOOSE */
 mongoose.connect('mongodb://localhost:27017/movieDB', { useNewUrlParser: true, useUnifiedTopology: true });
@@ -169,7 +176,7 @@ app.delete("/users/:UserName/movies/:MovieID", (req, res) =>{
 /* ------------------------------------ DETAILS MOVIES ----------------------------- */
 
 // READ: Creating GET route at endpoint "/movies" returning JSON object
-app.get("/movies", (req, res) =>{
+app.get("/movies", passport.authenticate("jwt", {session: false}), (req, res) =>{
   Movies.find()
   .then ((movies) => {
     res.status(201).json(movies);
