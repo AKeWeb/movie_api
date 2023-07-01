@@ -27,9 +27,6 @@ app.use(cors({
   }
 }));
 
-/* Hashing - require bcrypt */
-const bcrypt = require('bcrypt');
-
 /*Authentication*/
 let auth = require('./auth.js')(app);
 const passport = require("passport");
