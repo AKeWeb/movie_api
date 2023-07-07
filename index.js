@@ -27,6 +27,9 @@ app.use(cors({
   }
 }));
 
+/*Express-Validator */
+const { check, validationResult } = require('express-validator');
+
 /*Authentication*/
 let auth = require('./auth.js')(app);
 const passport = require("passport");
@@ -51,10 +54,28 @@ app.use(express.static("public"));
 /* ------------------------------------ USERS ----------------------------- */
 
 //Create new user
-app.post('/users', (req, res) => {
+app.post('/users', 
+[
+  check("Username", "Username is required").isLength({min: 5}),
+  check("Username", "Username contains no alphnumeric characters - not allowed.").isAlphanumeric(),
+  check("Password", "Password is required").not().isEmpty(),
+  check("Email", "Email does not appear to be valid").isEmail
+],
+(req, res) => {
+
+   // Check the validation object for errors
+  let errors = validationResult(req);
+  if (!error.isEmpty()) {
+    return res.status(422).json({error: errors.array()});
+  }
+
+  // Hashes the password
   let hashedPassword = Users.hashPassword(req.body.Password);
+
+  // Search to see if a user with the requested username already exists
   Users.findOne({ Username: req.body.Username })
     .then((user) => {
+  //If the user is found, send a response that it already exists
       if (user) {
         return res.status(400).send(req.body.Username + 'already exists');
       } else {
@@ -270,6 +291,7 @@ app.use((err, req, res, next) => {
 /* ------------------------------------ LISTEN TO PORT ----------------------------- */
 
 // listen for requests
-app.listen(8080, () => {
-  console.log("My movie app is listening on port 8080.");
+const port = process.env.PORT || 8080;
+app.listen(port, '0.0.0.0',() => {
+ console.log('Listening on Port ' + port);
 });
