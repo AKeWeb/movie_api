@@ -45,6 +45,7 @@ const Users = Models.User;
 /*CONECTING MONGODB WITH MONGOOSE */
 mongoose.connect('mongodb://localhost:27017/movieDB', { useNewUrlParser: true, useUnifiedTopology: true });
 
+// mongoose.connect('process.env.CONNECTION_URI', { useNewUrlParser: true, useUnifiedTopology: true });
 
 /* ------------------------------------ STATIC FILES ----------------------------- */
 
@@ -59,13 +60,13 @@ app.post('/users',
   check("Username", "Username is required").isLength({min: 5}),
   check("Username", "Username contains no alphnumeric characters - not allowed.").isAlphanumeric(),
   check("Password", "Password is required").not().isEmpty(),
-  check("Email", "Email does not appear to be valid").isEmail
+  check("Email", "Email does not appear to be valid").isEmail()
 ],
 (req, res) => {
 
    // Check the validation object for errors
   let errors = validationResult(req);
-  if (!error.isEmpty()) {
+  if (!errors.isEmpty()) {
     return res.status(422).json({error: errors.array()});
   }
 

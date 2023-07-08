@@ -16,3 +16,6 @@
 ::1 - - [29/Jun/2023:06:38:52 +0000] "PUT /users/test1234 HTTP/1.1" 404 153 "-" "PostmanRuntime/7.32.3"
 ::1 - - [29/Jun/2023:06:41:28 +0000] "PUT /users/test1234 HTTP/1.1" 404 153 "-" "PostmanRuntime/7.32.3"
 ::1 - - [29/Jun/2023:06:44:38 +0000] "PUT /users/test1234 HTTP/1.1" 404 153 "-" "PostmanRuntime/7.32.3"
+127.0.0.1 - - [08/Jul/2023:07:52:48 +0000] "POST /users/User5 HTTP/1.1" 404 151 "-" "PostmanRuntime/7.32.3"
+127.0.0.1 - - [08/Jul/2023:07:53:22 +0000] "POST /users/User5 HTTP/1.1" 404 151 "-" "PostmanRuntime/7.32.3"
+127.0.0.1 - - [08/Jul/2023:08:44:59 +0000] "POST /users/User1 HTTP/1.1" 404 151 "-" "PostmanRuntime/7.32.3"
