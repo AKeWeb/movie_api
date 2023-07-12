@@ -43,9 +43,9 @@ const Movies = Models.Movie;
 const Users = Models.User;
 
 /*CONECTING MONGODB WITH MONGOOSE */
-mongoose.connect('mongodb://localhost:27017/movieDB', { useNewUrlParser: true, useUnifiedTopology: true });
+//mongoose.connect('mongodb://localhost:27017/movieDB', { useNewUrlParser: true, useUnifiedTopology: true });
 
-// mongoose.connect('process.env.CONNECTION_URI', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('process.env.CONNECTION_URI', { useNewUrlParser: true, useUnifiedTopology: true });
 
 /* ------------------------------------ STATIC FILES ----------------------------- */
 
